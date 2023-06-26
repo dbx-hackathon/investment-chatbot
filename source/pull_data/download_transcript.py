@@ -17,7 +17,7 @@ for item in lines:
         transcript = YouTubeTranscriptApi.get_transcript(item, languages=['en'])
         
         for transcript_item in transcript:
-            text = transcript_item["text"].strip()
+            text = transcript_item["text"].strip().replace('\n', ' ').replace('\t', ' ')
             start = str(transcript_item["start"]).strip()
             duration = str(transcript_item["duration"]).strip()
 
