@@ -14,7 +14,7 @@ for item in lines:
 
     print ("processing [{item}]...".format(item = video_id))
     try:
-        transcript = YouTubeTranscriptApi.get_transcript(item)
+        transcript = YouTubeTranscriptApi.get_transcript(item, languages=['en'])
         
         for transcript_item in transcript:
             text = transcript_item["text"].strip()
