@@ -2,8 +2,8 @@ import requests
 from youtube_transcript_api import YouTubeTranscriptApi
 
 
-id_file = open("./youtube_video_ids3.txt", "r")
-csv_file = open("./youtube_video_transcript3.csv", "a")
+id_file = open("./youtube_video_ids4.txt", "r")
+csv_file = open("./youtube_video_transcript4.csv", "a")
 
 csv_file.write("video_id \tvideo_url \ttext \tstart \tduration \n")
 
