@@ -20,7 +20,7 @@ video_urls = []
 
 # medium videos
 videoDuration = "medium"
-url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults={maxResults}&regionCode=US&type=video&videoCaption=closedCaption&videoDuration={videoDuration}&order=viewCount&publishedAfter=2023-01-01T00:00:00Z&q=investment%20advisory&key={api_key}".format(maxResults = maxResults, videoDuration = videoDuration, api_key = api_key)
+url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults={maxResults}&regionCode=US&type=video&videoCaption=closedCaption&videoDuration={videoDuration}&order=viewCount&publishedAfter=2023-01-01T00:00:00Z&q=stock%20to%20buy&key={api_key}".format(maxResults = maxResults, videoDuration = videoDuration, api_key = api_key)
 response = requests.get(url, headers = headers)
 response_json = response.json()
 #print("medium:")
@@ -33,7 +33,7 @@ for item in response_json["items"]:
 
 # long videos
 videoDuration = "long"
-url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults={maxResults}&regionCode=US&type=video&videoCaption=closedCaption&videoDuration={videoDuration}&order=viewCount&publishedAfter=2023-01-01T00:00:00Z&q=investment%20advisory&key={api_key}".format(maxResults = maxResults, videoDuration = videoDuration, api_key = api_key)
+url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults={maxResults}&regionCode=US&type=video&videoCaption=closedCaption&videoDuration={videoDuration}&order=viewCount&publishedAfter=2023-01-01T00:00:00Z&q=stock%20to%20buy&key={api_key}".format(maxResults = maxResults, videoDuration = videoDuration, api_key = api_key)
 response = requests.get(url, headers = headers)
 response_json = response.json()
 #print("long:")
@@ -44,12 +44,12 @@ for item in response_json["items"]:
     video_urls.append(url)
 
 
-f = open("./youtube_video_ids2.txt", "a")
+f = open("./youtube_video_ids3.txt", "a")
 for item in video_ids:
     f.write(item + '\n')
 f.close()
 
-f = open("./youtube_video_urls2.txt", "a")
+f = open("./youtube_video_urls3.txt", "a")
 for item in video_urls:
     f.write(item + '\n')
 f.close()
